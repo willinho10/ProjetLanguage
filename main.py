@@ -65,6 +65,8 @@ if __name__ == '__main__':
 
     first_regex = r"\[.* \".*\"\]"
 
+    verify = 0
+
     match = re.search(first_regex, your_string)
 
     if match:
@@ -73,6 +75,7 @@ if __name__ == '__main__':
     else:
         print("There is no PNG title")
         content = your_string
+        verify += 1
 
     # check if the move is correct or not
     # a move is correct if it's a number in the order of the moves, and it's followed by a dot, and then a move or
@@ -91,6 +94,7 @@ if __name__ == '__main__':
         content = content[:match.start()]
     else:
         print("There is no correct result")
+        verify += 1
 
     # create an array of moves objects which contain the id of the move, the id is the number of the move,
     # the move and eventually the comment
@@ -120,6 +124,7 @@ if __name__ == '__main__':
     t_MOVE_PAWN = r'\sP?[a-h]+[1-8]\+?'
     t_CAPTURE = r'[RNBQK][x][a-hA-H]+[1-8]\+?'
     t_CAPTURE_PAWN = r'\sP?[a-h][x]+[a-h][1-8]\+?'
+    t_Castle = r'O-O-O|O-O'
 
     moveVariable = Move(0, "", "")
 
@@ -142,29 +147,37 @@ if __name__ == '__main__':
         move_pawn = re.findall(t_MOVE_PAWN, line)
         capture = re.findall(t_CAPTURE, line)
         capture_pawn = re.findall(t_CAPTURE_PAWN, line)
+        castle = re.findall(t_Castle, line)
 
-        moveGlobal = move + move_pawn + capture + capture_pawn
+        moveGlobal = move + move_pawn + capture + capture_pawn + castle
 
         if len(moveGlobal) != 2:
             if len(moveGlobal) == 1:
                 print("There is only one correct move")
+                print(id)
+                verify += 1
             elif len(moveGlobal) == 0:
                 print("There is no correct move")
+                verify += 1
             else:
                 print("There is more than 2 correct moves")
+                verify += 1
 
         tabFinal.append(Move(id, moveGlobal, comment))
 
     if tabFinal[0].id != 1:
         print("The PGN file doesn't start with the move 1")
+        verify += 1
 
     for i in range(1, len(tabFinal) - 1):
         if tabFinal[i - 1].id + 1 != tabFinal[i].id:
+            verify += 1
             print(f"The PGN file doesn't have increasing moves : Error at move {tabFinal[i].id}")
             break
 
     if idLastMove != tabFinal[len(tabFinal) - 1].id:
         print(f"The PGN file doesn't have increasing moves : Error at move {idLastMove}")
+        verify += 1
 
     l_MOVE = r'[RNBQK][a-hA-H]+[1-8]\+*'
     l_MOVE_PAWN = r'\sP?[a-h]+[1-8]\+*'
@@ -180,6 +193,14 @@ if __name__ == '__main__':
 
     if len(moveGlobal) > 2:
         print("There is more than 2 correct moves")
+        verify += 1
 
     if len(moveGlobal) == 0:
         print("There is no correct move")
+        verify += 1
+
+    if verify != 0:
+        print("The PGN file is not correct")
+        print(f"There is {verify} errors")
+    else:
+        print("The PGN file is correct")
