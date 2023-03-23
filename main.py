@@ -53,51 +53,45 @@ if __name__ == '__main__':
 
     your_string3 = '[Event "Rated Rapid game"] [Site "https://lichess.org/Pt4RCiMl"] [Date "2023.03.23"] [White "QueenOfPearls"] [Black "AidenSilverion"] [Result "0-1"] [UTCDate "2023.03.23"] [UTCTime "08:01:49"] [WhiteElo "1334"] [BlackElo "1395"] [WhiteRatingDiff "-124"] [BlackRatingDiff "+6"] [Variant "Standard"] [TimeControl "600+5"] [ECO "D05"] [Opening "Queen\'s Pawn Game: Colle System"] [Termination "Normal"] 1. d4 d5 2. e3 Nf6 3. Nf3 e6 4. Be2 Nc6 5. h3 Be7 6. O-O Bd7 7. Nc3 O-O 8. a4 Bd6 9. Qd3 e5 10. dxe5 Nxe5 11. Nxd5 Nxd3 12. Bxd3 Nxd5 0-1'
     your_string = '[Event "Mannheim"] [Site "Mannheim GER"] [Date "1914.08.01"] [EventDate "1914.07.20"] [Round "11"] ' \
-                  '[Result "1-0"] [White "Alexander Alekhine"] [Black "Hans Fahrni"] [ECO "C13"] [WhiteElo "?"] [' \
-                  'BlackElo "?"] [PlyCount "45"] 1. e4 {Notes by Richard Reti} 1... e6 2. d4 d5 3. Nc3 Nf6 4. Bg5 Be7 ' \
-                  '5. e5 Nfd7 6. h4 {This ingenious method of play which has subsequently been adopted by all modern ' \
-                  'masters is characteristic of Alekhine’s style.} 6... Bxg5 7. hxg5 Qxg5 8. Nh3 {! The ' \
-                  'short-stepping knight is always brought as near as possible to the actual battle field. Therefore ' \
-                  'White does not make the plausible move 8 Nf3 but 8 Nh3 so as to get the knight to f4.} 8... Qe7 9. ' \
-                  'Nf4 Nf8 10. Qg4 f5 {The only move. Not only was 11 Qxg7 threatened but also Nxd5.} 11. exf6 gxf6 ' \
-                  '12. O-O-O {He again threatens Nxd5.} 12... c6 13. Re1 Kd8 14. Rh6 e5 15. Qh4 Nbd7 16. Bd3 e4 17. ' \
-                  'Qg3 Qf7 {Forced - the sacrifice of the knight at d5 was threatened and after 17...Qd6 18 Bxe4 dxe4 ' \
-                  '19 Rxe4 and 20 Qg7 wins.} 18. Bxe4 dxe4 19. Nxe4 Rg8 20. Qa3 {Here, as so often happens, ' \
-                  'a surprising move and one difficult to have foreseen, forms the kernel of an apparently simple ' \
-                  'Alekhine combination.} 20... Qg7 {After 20.Qe7 21.Qa5+ b6 22.Qc3 would follow.} 21. Nd6 Nb6 22. ' \
-                  'Ne8 Qf7 {White mates in three moves.} 23. Qd6+ 1-0 '
+                   '[Result "1-0"] [White "Alexander Alekhine"] [Black "Hans Fahrni"] [ECO "C13"] [WhiteElo "?"] [' \
+                   'BlackElo "?"] [PlyCount "45"] 1. e4 {Notes by Richard Reti} 1... e6 2. d4 d5 3. Nc3 Nf6 4. Bg5 Be7 ' \
+                   '5. e5 Nfd7 6. h4 {This ingenious method of play which has subsequently been adopted by all modern ' \
+                   'masters is characteristic of Alekhine’s style.} 6... Bxg5 7. hxg5 Qxg5 8. Nh3 {! The ' \
+                   'short-stepping knight is always brought as near as possible to the actual battle field. Therefore ' \
+                   'White does not make the plausible move 8 Nf3 but 8 Nh3 so as to get the knight to f4.} 8... Qe7 9. ' \
+                   'Nf4 Nf8 10. Qg4 f5 {The only move. Not only was 11 Qxg7 threatened but also Nxd5.} 11. exf6 gxf6 ' \
+                   '12. O-O-O {He again threatens Nxd5.} 12... c6 13. Re1 Kd8 14. Rh6 e5 15. Qh4 Nbd7 16. Bd3 e4 17. ' \
+                   'Qg3 Qf7 {Forced - the sacrifice of the knight at d5 was threatened and after 17...Qd6 18 Bxe4 dxe4 ' \
+                   '19 Rxe4 and 20 Qg7 wins.} 18. Bxe4 dxe4 19. Nxe4 Rg8 20. Qa3 {Here, as so often happens, ' \
+                   'a surprising move and one difficult to have foreseen, forms the kernel of an apparently simple ' \
+                   'Alekhine combination.} 20... Qg7 {After 20.Qe7 21.Qa5+ b6 22.Qc3 would follow.} 21. Nd6 Nb6 22. ' \
+                   'Ne8 Qf7 {White mates in three moves.} 23. Qd6+ 1-0 '
 
     your_string1 = '1. e4 {hello its me} 1... d5 {Scandinavian defence (often follows 2. exd5 Da5)} '
     your_string2 = '1. e4 {Notes by Richard Reti} 1... e6 2. d4 d5 3. Nc3 Nf6 4. Bg5 Be7 5. e5 Nfd7 ' \
-                  '6. h4 {This ingenious method of play which has subsequently been adopted by all modern masters is ' \
-                  'characteristic of Alekhine’s style.} 6... Bxg5 7. hxg5 Qxg5 8. Nh3 {! The short-stepping knight is ' \
-                  'always brought as near as possible to the actual battle field. Therefore White does not make the ' \
-                  'plausible move 8 Nf3 but 8 Nh3 so as to get the knight to f4.} 8... Qe7 9. Nf4 Nf8 10. Qg4 f5 {The ' \
-                  'only move. Not only was 11 Qxg7 threatened but also Nxd5.} 11. exf6 gxf6 12. O-O-O {He again threatens ' \
-                  'Nxd5.} 12... c6 13. Re1 Kd8 14. Rh6 e5 15. Qh4 Nbd7 16. Bd3 e4 17. Qg3 Qf7 {Forced - the sacrifice of ' \
-                  'the knight at d5 was threatened and after 17...Qd6 18 Bxe4 dxe4 19 Rxe4 and 20 Qg7 wins.} 18. Bxe4 ' \
-                  'dxe4 19. Nxe4 Rg8 20. Qa3 {Here, as so often happens, a surprising move and one difficult to have ' \
-                  'foreseen, forms the kernel of an apparently simple Alekhine combination.} 20... Qg7 {After 20.Qe7 ' \
-                  '21.Qa5+ b6 22.Qc3 would follow.} 21. Nd6 Nb6 22. Ne8 Qf7 {White mates in three moves.} 23. Qd6+ 1-0 '
+                   '6. h4 {This ingenious method of play which has subsequently been adopted by all modern masters is ' \
+                   'characteristic of Alekhine’s style.} 6... Bxg5 7. hxg5 Qxg5 8. Nh3 {! The short-stepping knight is ' \
+                   'always brought as near as possible to the actual battle field. Therefore White does not make the ' \
+                   'plausible move 8 Nf3 but 8 Nh3 so as to get the knight to f4.} 8... Qe7 9. Nf4 Nf8 10. Qg4 f5 {The ' \
+                   'only move. Not only was 11 Qxg7 threatened but also Nxd5.} 11. exf6 gxf6 12. O-O-O {He again threatens ' \
+                   'Nxd5.} 12... c6 13. Re1 Kd8 14. Rh6 e5 15. Qh4 Nbd7 16. Bd3 e4 17. Qg3 Qf7 {Forced - the sacrifice of ' \
+                   'the knight at d5 was threatened and after 17...Qd6 18 Bxe4 dxe4 19 Rxe4 and 20 Qg7 wins.} 18. Bxe4 ' \
+                   'dxe4 19. Nxe4 Rg8 20. Qa3 {Here, as so often happens, a surprising move and one difficult to have ' \
+                   'foreseen, forms the kernel of an apparently simple Alekhine combination.} 20... Qg7 {After 20.Qe7 ' \
+                   '21.Qa5+ b6 22.Qc3 would follow.} 21. Nd6 Nb6 22. Ne8 Qf7 {White mates in three moves.} 23. Qd6+ 1-0 '
 
-    first_regex = r"\[.* \".*\"\]"
+    title_regex = r"\[.* \".*\"\]"
 
     verify = 0
 
-    match = re.search(first_regex, your_string)
+    match = re.search(title_regex, your_string)
 
     if match:
-        print("There is PNG title")
         content = your_string[match.end():]
     else:
-        print("There is no PNG title")
+        print("There is no PGN title")
         content = your_string
         verify += 1
-
-    # check if the move is correct or not
-    # a move is correct if it's a number in the order of the moves, and it's followed by a dot, and then a move or
-    # a comment. A comment is a string between curly brackets.
-    # After a comment the move is reminded by his number and 3 dots.
 
     result = r'1-0|0-1|1/2-1/2'
 
@@ -112,13 +106,7 @@ if __name__ == '__main__':
         print("There is no correct result")
         verify += 1
 
-    # create an array of moves objects which contain the id of the move, the id is the number of the move,
-    # the move and eventually the comment
-
-    # split the content by the moves
-
-    lines = []
-    move_regex = r"\d+\.\s+(?:\s*\{.*?\})?\s*(\S+)(?:\s*\{.*?\})?\s+(\S+)(?:\s*\{.*?\})?\s*[a-zA-Z]*[1-8]*\s(?:\s*\{.*?\})?\s*"
+    move_regex = r"\d+\.\s+(?:\s*\{.*?\})?\s*(\S+)(?:\s*\{.*?\})?\s+(\S+)(?:\s*\{.*?\})?\s*[a-zA-Z]*[1-8]*\s(?:\s*\{.*?\})?\s*(?:(\d+\...\s([a-zA-Z]*[1-8]*\s)*)?)"
 
     tabMoves = []
 
@@ -133,8 +121,6 @@ if __name__ == '__main__':
 
     id_regex = r"\d+."
     pre_comment_regex = r"\{.*\}\s+\d+\.\.\.\s"
-
-    # comment_regex = pre_comment_regex without the "\s+\d+."
 
     t_MOVE = r'[RNBQK][a-hA-H]+[1-8]\+?'
     t_MOVE_PAWN = r'\sP?[a-h]+[1-8]\+?'
@@ -175,7 +161,17 @@ if __name__ == '__main__':
             for deleteMove in moveGlobal:
                 line = line.replace(deleteMove, "")
 
-        print(line)
+        # delete invisible characters and after check if there is some characters left
+        line = line.replace(" ", "")
+        line = line.replace("\t", "")
+        line = line.replace("\n", "")
+        line = line.replace("\r", "")
+
+        if line:
+            print("There is some unrecognised characters in the PGN file")
+            print(f"At move number {id}")
+            print(f"Unrecognised characters : {line}")
+            verify += 1
 
         if len(moveGlobal) != 2:
             if len(moveGlobal) == 1:
