@@ -80,18 +80,23 @@ if __name__ == '__main__':
                    'foreseen, forms the kernel of an apparently simple Alekhine combination.} 20... Qg7 {After 20.Qe7 ' \
                    '21.Qa5+ b6 22.Qc3 would follow.} 21. Nd6 Nb6 22. Ne8 Qf7 {White mates in three moves.} 23. Qd6+ 1-0 '
 
-    title_regex = r"\[.* \".*\"\]"
+    title_regex = r"\[[a-zA-Z\s]*\s\"[a-zA-Z0-9\s\-\.\?\!]*\"\]\s*"
 
     verify = 0
 
     match = re.search(title_regex, your_string)
 
     if match:
-        content = your_string[match.end():]
+        content = your_string[:match.start()] + your_string[match.end():]
+        match = re.search(title_regex, content)
     else:
         print("There is no PGN title")
         content = your_string
         verify += 1
+
+    while match:
+        content = content[:match.start()] + content[match.end():]
+        match = re.search(title_regex, content)
 
     result = r'1-0|0-1|1/2-1/2'
 
@@ -114,10 +119,24 @@ if __name__ == '__main__':
 
     while listM:
         tabMoves.append(listM.group())
-        content = content[listM.end():]
+        content = content[:listM.start()] + content[listM.end():]
         listM = re.search(move_regex, content)
 
-    lastMove = content
+    last_move_regex = "\d+\.\s+(?:\s*\{.*?\})?\s*(\S+)(?:\s*\{.*?\})?\s*[a-zA-Z]*[1-8]*\s(?:\s*\{.*?\})?\s*"
+
+    lastMove = re.search(last_move_regex, content).group()
+
+    content = content[:re.search(last_move_regex, content).start()] + content[re.search(last_move_regex, content).end():]
+
+    content = content.replace(" ", "")
+    content = content.replace("\t", "")
+    content = content.replace("\n", "")
+    content = content.replace("\r", "")
+
+    if content:
+        print("There is some unrecognised characters in the PGN file")
+        print(f"Unrecognised characters : {content}")
+        verify += 1
 
     id_regex = r"\d+."
     pre_comment_regex = r"\{.*\}\s+\d+\.\.\.\s"
